@@ -12,7 +12,9 @@ CTestTestfile.cmake
 Makefile
 Tests/*Tests
 Thumbs.db
+*~
 *.a
+*.kdev4
 *.moc
 *.moc_parameters
 *.qrc.depends
