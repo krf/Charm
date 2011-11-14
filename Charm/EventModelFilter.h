@@ -18,6 +18,11 @@ class EventModelFilter : public QSortFilterProxyModel,
     Q_OBJECT
 
 public:
+    enum EventModelRoles {
+        TasksViewRole_Name = Qt::UserRole + 1,
+        TasksViewRole_Id,
+    };
+
     explicit EventModelFilter( CharmDataModel*, QObject* parent = 0 );
     virtual ~EventModelFilter();
 

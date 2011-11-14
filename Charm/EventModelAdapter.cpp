@@ -9,6 +9,8 @@ EventModelAdapter::EventModelAdapter( CharmDataModel* parent )
     , m_dataModel( parent )
 {
     m_dataModel->registerAdapter( this );
+
+    QHash<int, QByteArray> roles = roleNames();
 }
 
 EventModelAdapter::~EventModelAdapter()

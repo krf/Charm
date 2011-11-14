@@ -83,6 +83,7 @@ OPTION( CHARM_TIMESHEET_TOOLS "Build the Charm timesheet tools" OFF )
 
 ADD_SUBDIRECTORY( Core )
 ADD_SUBDIRECTORY( Charm )
+ADD_SUBDIRECTORY( CharmMobile )
 
 IF( CHARM_TIMESHEET_TOOLS AND UNIX )
         # Only build the tools if they are explicitly requested to avoid
@@ -111,6 +112,7 @@ IF( NOT "${CMAKE_VERSION}" VERSION_LESS "2.8.4" )
         SET( CPACK_PACKAGE_VERSION "${Charm_VERSION}" )
         SET( CPACK_PACKAGE_VENDOR "KDAB" )
         SET( CPACK_RESOURCE_FILE_README "${CMAKE_SOURCE_DIR}/${README_FILE}" )
+        SET( CPACK_DEBIAN_PACKAGE_MAINTAINER "info@kdab.com" )
         IF( WIN32 )
                 SET( CPACK_GENERATOR "NSIS" "ZIP" )
                 SET( CPACK_PACKAGE_EXECUTABLES "Charm" "Charm" )

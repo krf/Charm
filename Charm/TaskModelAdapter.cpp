@@ -15,12 +15,19 @@ TaskModelAdapter::TaskModelAdapter( CharmDataModel* parent )
     : QAbstractItemModel()
     , m_dataModel( parent )
 {
-	m_dataModel->registerAdapter( this );
+    m_dataModel->registerAdapter( this );
+
+    QHash<int, QByteArray> roles = roleNames();
+    roles.insert(TasksViewRole_Name, "name");
+    roles.insert(TasksViewRole_TaskId, "taskid");
+    roles.insert(TasksViewRole_RunningTime, "runningtime");
+    roles.insert(TasksViewRole_Comment, "comment");
+    setRoleNames(roles);
 }
 
 TaskModelAdapter::~TaskModelAdapter()
 {
-	m_dataModel->unregisterAdapter( this );
+    m_dataModel->unregisterAdapter( this );
 }
 
 // reimplement QAbstractItemModel:
